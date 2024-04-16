@@ -1,13 +1,16 @@
   import { useSelector } from "react-redux"
   import { useRef, useState, useEffect } from "react";
   import { app } from "../firebase";
-  import {getStorage, ref, uploadBytesResumable} from 'firebase/storage'
+  import {getDownloadURL, getStorage, ref, uploadBytesResumable} from 'firebase/storage'
 
 
   export default function Profile() {
     const fileRef = useRef(null);
     const [image, setImage] = useState(undefined);
-    console.log(image);
+    const [ImagePercent, setImagePercent] = useState(0);
+    const [imageError, setImageError] = useState(false);
+    const [formData, setFormdata] = useState({});
+
     const { currentUser } = useSelector((state) => state.user);
     
     useEffect(() => {
@@ -27,11 +30,18 @@
         (snapshot) => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log('Upload is ' + progress + '% done');
-          // setImagePercent(Math.round(progress));
-        }
-      );
-    };
+          setImagePercent(Math.round(progress));
+        },
+          (error) => {
+            setImageError(true)
+          },
+          () => {
+            getDownloadURL(uploadTask.snapshot.ref).then
+            ((downloadURL) =>  setFormdata({ ...formData, profilePicture:
+              downloadURL}));
+            }
+          );
+        };
   
     return (
       <div className="p-3 max-w-lg mx-auto">
@@ -54,6 +64,18 @@
             className="h-24 w-24 self-center cursor-pointer rounded-full object-cover mt-2"
             onClick={() => fileRef.current.click()}
           />
+        <p className="text-sm self-center">
+           {imageError ? (
+            <span className="text-red-700">Error uploading
+            image(file size must be less than 2 MB)</span>) : ImagePercent > 0 &&
+            ImagePercent < 100 ? (
+              <span className="text-slate-700">{`Uploading:
+               ${ImagePercent} %`}</span> ) : ImagePercent
+              === 100 ? (
+                <span className="text-green-700">Image
+                 uploaded successfully</span> ) : (''
+           )}
+        </p>
           <input 
             defaultValue={currentUser.username} 
             type="text" 
