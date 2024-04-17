@@ -18,7 +18,7 @@ function Notes() {
     formData.append('datee', date);
 
     try {
-      const res = await axios.post('http://localhost:3000/upload', formData);
+      const res = await axios.post('http://localhost:8560/upload', formData);
       console.log(res);
       setImageURL(res.data.image);
       // Redirect to the gallery page after successful upload

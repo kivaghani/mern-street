@@ -8,7 +8,7 @@ function Gallery() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/gallery')
+    axios.get('http://localhost:8560/gallery')
       .then(response => {
         setNotes(response.data);
       })
@@ -21,12 +21,12 @@ function Gallery() {
     <>
     <Header/>
     <div className="fi">
-    <div className="gallery text-center">
+    <div className="gallery">
       <h1>Gallery</h1>
       <div className="image-grid">
         {notes.map((note, index) => (
           <div key={index} className="image-card">
-            <img src={`http://localhost:3000/Images/${note.image}`} alt="" />
+            <img src={`http://localhost:8560/Images/${note.image}`} alt="" />
             <div className="note-info">
               <p><strong>Name:</strong> {note.Username}</p>
               <p><strong>Date:</strong> {note.Date}</p>

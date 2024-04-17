@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link,useNavigate } from 'react-router-dom';
 import OAuth from '../components/OAuth';
-// import Header from '../components/Header';
+import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 export default function SignUp() {
@@ -50,7 +50,7 @@ export default function SignUp() {
   
   return (
     <>
-    {/* <Header/> */}
+    <Header/>
     <div className="back2">
     <div className='p-5 max-w-lg mx-auto'>
         <h1 className='text-3xl text-center font-semibold my-7 text-white'>Sign Up</h1>

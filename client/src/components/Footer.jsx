@@ -40,7 +40,7 @@ const Footer = () => {
             <h6 className="text-uppercase font-weight-bold" style={{ color: 'black' }}>Useful links</h6>
             <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: '70px' }} />
             <p>
-              <a href="/your-profile">Your Account</a>
+              <a href="/profile">Your Account</a>
             </p>
             <p>
               <a href="/citi">food catagory</a>
@@ -49,7 +49,7 @@ const Footer = () => {
               <a href="/contact">Contact</a>
             </p>
             <p>
-              <a href="/notes">Notes</a>
+              <a href="/memories">Notes</a>
             </p>
           </div>
           <hr className="clearfix w-100 d-md-none" />
@@ -68,7 +68,7 @@ const Footer = () => {
           <h5 className="mb-1">Register for free</h5>
         </li>
         <li className="list-inline-item">
-          <a href="/login" className="btn btn-outline-danger btn-rounded">Sign up!</a>
+          <a href="/sign-up" className="btn btn-outline-danger btn-rounded">Sign up!</a>
         </li>
       </ul>
       <div className="hover-effect1">
