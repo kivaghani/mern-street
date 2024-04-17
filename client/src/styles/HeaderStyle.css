@@ -1,0 +1,229 @@
+/* Header CSS */
+
+
+:root {
+    /* Fonts Family */
+    --roboto-font: "Roboto", sans-serif;
+    --lilita-font: "Lilita One", cursive;
+    --oswald-font: "Oswald", sans-serif;
+  
+    /* Colors */
+    --light-black: #333;
+    --light-white: #f7f7f7;
+    --light-red: #e3000e;
+    --light-grey: #f6f9fa;
+    --light-grey-2: #dddddd;
+    --white: #fff;
+    --yellow: #f7be27;
+    --grey: #757575;
+    --brown: #6f5e4d;
+    --bg-coffee: #642f21;
+  }
+
+  /* Header CSS */
+
+.nav-link {
+  font-family: 'Roboto', sans-serif; /* Change font family */
+  font-weight: bold; /* Adjust font weight if needed */
+  font-size: 16px; /* Adjust font size */
+  text-transform: uppercase;
+  padding: 10px 15px;
+  color: #333; /* Adjust text color */
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #f7be27; 
+}
+
+.nav-link.active {
+  color: #f7be27; 
+}
+
+  .active {
+  color: #f7be27; 
+}
+
+.sign-in-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color:darkred; /* Button color */
+  color: #ffffff; /* Text color */
+  padding: 8px 16px; /* Adjust padding as needed */
+  border-radius: 4px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s; /* Smooth transition */
+
+  
+  &:hover {
+    background-color:yellow; 
+    color: black;/* Darker color on hover */
+  }
+}
+
+
+.sign-in-link img {
+  margin-right: 2px; /* Spacing between icon and text */
+}
+
+  
+header .navbar {
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    z-index: 1000;
+  }
+  
+  header .navbar.sticky {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: var(--white);
+    -webkit-transition: all 15ms ease-in-out;
+    -moz-transition: all 15ms ease-in-out;
+    -o-transition: all 15ms ease-in-out;
+    -ms-transition: all 15ms ease-in-out;
+    transition: all 15ms ease-in-out;
+    animation-name: stickyTransition;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-box-shadow: 0 2px 3px rgba(96, 96, 96, 0.1);
+    -moz-box-shadow: 0 2px 3px rgba(96, 96, 96, 0.1);
+    box-shadow: 0 2px 3px rgba(96, 96, 96, 0.1);
+  }
+  @keyframes stickyTransition {
+    0% {
+      opacity: 0;
+      -webkit-transform: translate3d(0, -100%, 0);
+      transform: translate3d(0, -100%, 0);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  header .logo img {
+    width: auto;
+    max-width: inherit;
+    max-height: 80px;
+  }
+  
+  header .nav-link {
+    display: inline-flex;
+    justify-content: center;
+    color: var(--white);
+    padding: 0 1rem !important;
+    font-size: 1.125rem;
+    font-weight: 500;
+    font-family: var(--oswald-font);
+    text-transform: uppercase;
+    -webkit-transition: all 15ms ease-in-out;
+    -ms-transition: all 15ms ease-in-out;
+    -o-transition: all 15ms ease-in-out;
+    -moz-transition: all 15ms ease-in-out;
+    transition: all 15ms ease-in-out;
+  }
+  
+  header .sticky .nav-link {
+    color: var(--light-black);
+  }
+  header .nav-link:hover {
+    color: var(--yellow);
+  }
+  header .cart {
+    position: relative;
+    top: 0px;
+    height: 20px;
+  }
+  header .roundpoint {
+    width: 16px;
+    height: 16px;
+    background: var(--light-red);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 11.2px;
+    line-height: 16px;
+    text-align: center;
+    font-style: normal;
+    position: absolute;
+    top: 3.2px;
+    right: -8px;
+  }
+  /* Updated Sidebar CSS */
+
+/* Update Sidebar CSS */
+
+/* Updated Offcanvas Sidebar CSS */
+
+/* Updated Offcanvas Sidebar CSS */
+
+.offcanvas {
+  background-color: #fff; /* Change background color */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+
+.offcanvas-header {
+  background-color:#757575; /* Change header background color */
+  color: #fff; /* Change text color */
+  border-bottom: none; /* Remove border bottom */
+  padding: 1.5rem; /* Add padding */
+}
+
+.offcanvas-title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.8rem; /* Increase font size */
+}
+
+.offcanvas-body {
+  padding: 1.5rem;
+}
+
+.offcanvas-body .nav-link {
+  padding: 1rem 0; /* Add padding */
+  color: #343a40; /* Change link color */
+  font-size: 1.3rem; /* Increase font size */
+  transition: color 0.3s ease; /* Add transition effect */
+}
+
+.offcanvas-body .nav-link:hover {
+  color:#e3000e; /* Change link color on hover */
+}
+
+.offcanvas-body .nav-link i {
+  margin-right: 0.5rem; /* Add margin to icon */
+}
+
+.offcanvas-backdrop {
+  background-color: rgba(0, 0, 0, 0.5); /* Change backdrop color */
+}
+
+
+  
+  /* Media Query CSS */
+  
+  @media (max-width: 992px) {
+    header .navbar {
+      background-color: var(--white);
+    }
+    header .navbar-toggler {
+      border: none;
+    }
+    header .navbar-toggler:focus {
+      outline: none;
+      box-shadow: none;
+    }
+    header .navbar-toggler-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    header .nav-link {
+      color: var(--light-black);
+      padding: 1rem !important;
+    }
+  }

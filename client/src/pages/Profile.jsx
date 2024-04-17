@@ -17,6 +17,8 @@ import {
   deleteUserFailure,
   signOut,
 } from '../redux/user/userSlice';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Profile() {
   const dispatch = useDispatch();
@@ -108,9 +110,12 @@ export default function Profile() {
     }
   };
   return (
+    <>
+    <Header/>
+    <div className="back">
     <div className='p-3 max-w-lg mx-auto'>
-      <h1 className='text-3xl font-semibold text-center my-7'>Profile</h1>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
+    <h1 className='text-3xl font-semibold text-center my-7 p-4 text-white'></h1>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-3'>
         <input
           type='file'
           ref={fileRef}
@@ -173,18 +178,21 @@ export default function Profile() {
       <div className='flex justify-between mt-5'>
         <span
           onClick={handleDeleteAccount}
-          className='text-red-700 cursor-pointer'
+          className='text-white cursor-pointer bg-red-700 p-3 rounded-lg'
         >
           Delete Account
         </span>
-        <span onClick={handleSignOut} className='text-red-700 cursor-pointer'>
+        <span onClick={handleSignOut} className='text-white cursor-pointer bg-red-700 p-3 rounded-lg'>
           Sign out
         </span>
       </div>
-      <p className='text-red-700 mt-5'>{error && 'Something went wrong!'}</p>
+      <p className='text-red-700s  mt-5'>{error && 'Something went wrong!'}</p>
       <p className='text-green-700 mt-5'>
         {updateSuccess && 'User is updated successfully!'}
       </p>
     </div>
+    </div>
+    <Footer/>
+    </>
   );
 }

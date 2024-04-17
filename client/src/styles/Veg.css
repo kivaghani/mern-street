@@ -1,0 +1,192 @@
+:root {
+    /* Fonts Family */
+    --roboto-font: "Roboto", sans-serif;
+    --lilita-font: "Lilita One", cursive;
+    --oswald-font: "Oswald", sans-serif;
+  
+    /* Colors */
+    --light-black: #333;
+    --light-white: #f7f7f7;
+    --light-red: #e3000e;
+    --light-grey: #f6f9fa;
+    --light-grey-2: #dddddd;
+    --white: #fff;
+    --yellow: #f7be27;
+    --grey: #757575;
+    --brown: #6f5e4d;
+    --bg-coffee: #642f21;
+  }
+  
+  .vegi{
+    padding-top: 120px;
+    padding-bottom: 100px;
+    /* position: relative; */
+    background: url("../images/about-1.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+  
+  .nameee h2{
+      color: yellow;
+      background-color: transparent;
+  }
+    .state{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2%;
+    }
+  
+    .Statename{
+      display: flex;
+      height: 50px;
+      width: 650px;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      text-decoration: none;
+      font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      margin: 5px; 
+      border: 2px solid black;
+      border-radius: 5px;
+      background-color:antiquewhite;
+      color: black;
+      padding: 2%;
+      font-size:20px;
+  
+    }
+  
+    .Statename:hover{
+      font-weight: bold;
+      border: 3px solid yellow;
+      box-shadow: 0px 0px 10px black;
+   }
+  
+  
+  
+   /* manekcard */
+  
+  
+   #portfolio {
+    position: relative;
+    background: url("../images/about-1.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding-top: 120px;
+    padding-bottom: 100px;
+  }
+  
+  .portfolio__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    padding-top: 3%;
+  
+  }
+  
+  .portfolio-item {
+    background: var(--light-grey);
+    width: calc(33.33% - 2rem); 
+    max-width: 300px;
+    padding: 1.3rem;
+    border-radius: 1rem;
+    border: 3px solid black;
+    background-size: cover;
+    background-color: antiquewhite;
+  }
+  
+  .portfolio-item:hover{
+    border: 3px solid red;
+  } 
+  
+  .portfolio__item-image {
+    border-radius: 1rem;
+    overflow: hidden;
+  }
+  
+  #portfolio img {
+    max-width: 100%; 
+    height: 200px;
+    padding-bottom: 5%; 
+  }
+  
+  .portfolio-item h3 {
+    text-align: center;
+    padding: 5%;
+    font-size: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .portfolio__item-cta {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; 
+  }
+  
+  
+  .cr,
+  .dr {
+    border-radius: 10px;
+    background-color: #642f21;
+    color: #dddddd;
+    padding: 5%;
+    text-decoration: none;
+    margin: 2%;
+    font-size: 12px;
+    flex: 1 0 40%; 
+    max-width: 150px; 
+    text-align: center;
+  }
+  
+  .bo a {
+    border-radius: 10px;
+    background-color: #642f21;
+    color: #dddddd;
+    padding: 3%;
+    text-decoration: none;
+    display: inline-block; 
+    margin-top: 10px;
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
+    /* max-width: 250px;  */
+    width: 100%; 
+  }
+  
+  .bo a:hover {
+    background-color: var(--yellow);
+    color: black;
+    border: 2px solid black;
+  }
+  
+  
+  .cr:hover,
+  .dr:hover {
+    background-color: var(--yellow);
+    color: black;
+    border: 2px solid black;
+    font-weight: bold;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .portfolio-item {
+      width: calc(50% - 2rem); 
+    }
+    .cr,
+  .dr{
+    font-size: 10px;
+  }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .portfolio-item {
+      width: calc(100% - 2rem); 
+    }
+  
+    .bo {
+      padding: 2%; 
+    }
+  }
+  
+  

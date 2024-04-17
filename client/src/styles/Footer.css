@@ -1,0 +1,19 @@
+/* Your CSS file, e.g., Footer.css */
+.line {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .line li {
+    display: inline;
+    margin-right: 10px; /* Adjust as needed */
+  }
+  
+  .line li:last-child {
+    margin-right: 0; /* Remove margin for the last item */
+  }
+  
+  
+  
+  

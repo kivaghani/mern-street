@@ -3,6 +3,8 @@ import { Link,useNavigate } from 'react-router-dom';
 import {  useDispatch, useSelector } from 'react-redux';
 import {signInStart, signInSuccess, signInFailure} from '../redux/user/userSlice';
 import OAuth from '../components/OAuth';
+import Footer from '../components/Footer';
+// import Header from '../components/Header';
 
 export default function SignIn() {
   const [formData, setFormData]=useState({});
@@ -46,8 +48,12 @@ export default function SignIn() {
   };
   
   return (
+    <>
+    {/* <Header/> */}
+
+    <div className="back2">
     <div className='p-3 max-w-lg mx-auto'>
-        <h1 className='text-3xl text-center font-semibold my-7'>Sign In</h1>
+        <h1 className='text-3xl text-center font-semibold my-7 p-5 text-white'>Sign In</h1>
         <form onSubmit={handleSubmit} className='flex flex-col gap-4 ' >
           
           <input type="email"  placeholder='email ' className='border p-3 rounded-lg 'id='email' onChange={handleChange}/>
@@ -56,12 +62,15 @@ export default function SignIn() {
         <OAuth/>
         </form>
         <div className='flex gap-2 mt-5'>
-          <p>Dont have an account?</p>
+          <p className='text-white'>Dont have an account?</p>
           <Link to={"/sign-up"}>
-            <span className='text-blue-700'>Sign up</span>
+            <span className='text-green-300'>Sign up</span>
           </Link>
         </div>
-        {error && <p className='text-red-500 mt-5'>{error}</p>}
+        {error && <p className='text-white mt-5'>{error}</p>}
     </div>
+    </div>
+    <Footer/>
+    </>
   )
 }
