@@ -37,6 +37,8 @@ import Nilambag from "./Mainpage/Veg/Bhavnagar/Nilambag"
 import Gallery from "./UserProfile/Gallery"
 import AmdManekBalaOrder from "./Mainpage/Veg/Ahmedabad/AmdManekBalaOrder"
 import PagenotFound from "./UserProfile/PagenotFound"
+import AHmedabad from "./Mainpage/NonVeg/Ahmedabad/AHmedabad"
+import Juhapura from "./Mainpage/NonVeg/Ahmedabad/Juhapura"
 
 
 export default function App() {
@@ -100,6 +102,13 @@ export default function App() {
         <Route path="/bhavnagar-area" element={<Barea/>} />
         <Route path="/ghogha-circle" element={<Ghogha/>} />
         <Route path="/nilambag" element={<Nilambag/>} />
+
+
+        {/* Nonveg */}
+        {/* AHmedabad */}
+        <Route path="/ahmedabad-area" element={<AHmedabad/>} />
+        <Route path="/juhapura" element={<Juhapura/>} />
+
 
 
         <Route element={<PrivateRoute/>}>

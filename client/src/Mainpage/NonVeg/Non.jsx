@@ -14,7 +14,7 @@ function Non() {
       <Col className="nameee">
   <h2>Select Your Cities</h2>
   <div className="state ">
-    <Link as={Link} to="/" className="Statename">
+    <Link as={Link} to="/ahmedabad-area" className="Statename">
       Ahmedabad
     </Link>
     <Link as={Link} to="/" className="Statename">
