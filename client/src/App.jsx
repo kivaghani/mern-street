@@ -35,6 +35,8 @@ import Barea from "./Mainpage/Veg/Bhavnagar/Barea"
 import Ghogha from "./Mainpage/Veg/Bhavnagar/Ghogha"
 import Nilambag from "./Mainpage/Veg/Bhavnagar/Nilambag"
 import Gallery from "./UserProfile/Gallery"
+import AmdManekBalaOrder from "./Mainpage/Veg/Ahmedabad/AmdManekBalaOrder"
+import PagenotFound from "./UserProfile/PagenotFound"
 
 
 export default function App() {
@@ -47,7 +49,11 @@ export default function App() {
         <Route path="/about" element={<Section2/>}/>
         <Route path="/menu" element={<Section3/>}/>
         <Route path="/blog" element={<Section6/>}/>
-        <Route path="/contact" element={<Section7/>}/>\
+        <Route path="/contact" element={<Section7/>}/>
+        <Route path="/book/1" element={<AmdManekBalaOrder/>} />
+        <Route path="/book/2" element={<PagenotFound/>} />
+
+
 
 
         <Route path="/memories" element={<Notes/>}/>
