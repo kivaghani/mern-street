@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Image1 from "../../images/khaman-dhokla.png";
 import Image2 from "../../images/dosa.jpg";
 import Image3 from "../../images/idli.jpg";
@@ -8,6 +9,7 @@ import Image6 from "../../images/vadapav.jpg";
 import Image7 from "../../images/bhajiya.jpg";
 import Image8 from "../../images/burger-18.jpg";
 import Header from '../../components/Header';
+import { Link } from 'react-router-dom';
 
 // Mock Data Cards
 const data = [
@@ -63,33 +65,47 @@ const data = [
 
 
 function Section3  () {
+  const { currentUser } = useSelector((state) => state.user);
+  const handleButtonClick = () => {
+    alert('To unlock this feature, please sign in.');
+  };
+
   return (
     <>
       <Header />
-      
       <section id='portfolio'>
-        <h2 className='text-center text-white' >Most Popular Food</h2>
-        <div className="container portfolio__container">
-          {data.map(({ id, image, title,read }) => {
+        <h2 className='text-center text-white'>Most Popular Food</h2>
+        <div className='container portfolio__container'>
+          {data.map(({ id, image, title, read }) => {
             return (
               <article key={id} className='portfolio-item'>
-                <div className="portfolio__item-image">
+                <div className='portfolio__item-image'>
                   <img src={image} alt={title} />
                 </div>
                 <h3>{title}</h3>
-                <div className="portfolio__item-cta">
-                  <a href={read} className='dr'>Read more...</a>
+                <div className='portfolio__item-cta'>
+                  {currentUser ? (
+                    <a href={read} className='dr'>
+                      Read more...
+                    </a>
+                  ) : (
+                    <Link to="/sign-in">
+                    <button
+                      className="text-white font-bold py-2 px-4 rounded bg-red-950 hover:bg-yellow-500"
+                      onClick={handleButtonClick}
+                    >
+                      Read more
+                    </button>
+                  </Link>
+                  )}
                 </div>
               </article>
-            )
+            );
           })}
         </div>
-       
       </section>
-      {/* <Footer/> */}
-  
     </>
-  )
-}
+  );
+};
 
-export default Section3
+export default Section3;
