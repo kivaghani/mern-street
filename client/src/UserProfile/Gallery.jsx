@@ -1,44 +1,48 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import '../styles/gallery.css';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import React, { useEffect, useState } from "react";
+import "../styles/gallery.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-function Gallery() {
-  const [notes, setNotes] = useState([]);
+const Gallery = () => {
+  const [formDataList, setFormDataList] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8560/gallery')
-      .then(response => {
-        setNotes(response.data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    const storedFormData =
+      JSON.parse(localStorage.getItem("formDataList")) || [];
+    setFormDataList(storedFormData);
   }, []);
 
   return (
     <>
-    <Header/>
-    <div className="fi">
-    <div className="gallery">
-      <h1>Gallery</h1>
-      <div className="image-grid">
-        {notes.map((note, index) => (
-          <div key={index} className="image-card">
-            <img src={`http://localhost:8560/Images/${note.image}`} alt="" />
-            <div className="note-info">
-              <p><strong>Name:</strong> {note.Username}</p>
-              <p><strong>Date:</strong> {note.Date}</p>
-            </div>
+      <Header />
+      <div className="fi">
+        <div className="gallery">
+          <h2 className="text-white">Gallery</h2>
+          <div className="image-grid">
+            {formDataList.map((formData, index) => (
+              <div key={index} className="image-card">
+                {formData.images &&
+                  formData.images.map((image, imgIndex) => (
+                    <img
+                      key={imgIndex}
+                      width={100}
+                      height={100}
+                      src={image}
+                      alt=""
+                    />
+                  ))}
+                <div className="note-info">
+                  <p className="text-white">Text: {formData.text}</p>
+                  <p className="text-white">Date: {formData.date}</p>
+                </div>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </div>
-    </div>
-    <Footer/>
+      <Footer />
     </>
   );
-}
+};
 
 export default Gallery;
