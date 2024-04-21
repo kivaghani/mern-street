@@ -32,7 +32,7 @@ const Header = () => {
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
+          <Navbar.Collapse id="responsive-navbar-nav" className="justify-content-end">
             <Nav className="ms-auto" style={{ flexGrow: 1, justifyContent: 'center' }}>
               <NavLink
                 exact

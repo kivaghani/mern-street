@@ -1,109 +1,70 @@
-import React from 'react';
-import { Link } from "react-router-dom";
-import '../styles/Footer.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
-import { faFacebookF, faTwitter, faGoogle, faInstagram, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'; 
+  import React from 'react';
+  import { Link } from "react-router-dom";
+  import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; 
+  import { faFacebookF, faTwitter, faGoogle, faInstagram, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'; 
 
-
-const Footer = () => {
-  return (
-    <footer id="Footer" className="page-footer font-small stylish-color-dark pt-4" style={{ backgroundColor: 'white' }}>
-      <div className="container text-center text-md-left">
-        <div className="row">
-          <div className="col-md-4 mx-auto">
-            <h5 className="text-uppercase font-weight-bold mt-3 mb-4 " style={{ color: 'black' }}>About our Company</h5>
-            <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: '70px' }} />
-            <p className='oko'  style={{ color: 'black' }}>Heystreet is a street food platform designed to provide comprehensive information about both vegetarian and non-vegetarian street food options. </p>
+  const Footer = () => {
+    return (
+      <footer className="bg-gray-900 text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+              <h5 className="text-lg font-semibold mb-4 text-center">About our Company</h5>
+              <p>Heystreet is a street food platform designed to provide comprehensive information about both vegetarian and non-vegetarian street food options.</p>
+            </div>
+            <div>
+              <h5 className="text-lg font-semibold mb-4 text-center">Products</h5>
+              <ul className='text-center p-2'>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/menu">Menu</Link></li>
+                <li><Link to="/blog">Blog</Link></li>
+                <li><Link to="/gallery">Gallery</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="text-lg font-semibold mb-4 text-center ">Useful links</h5>
+              <ul className='text-center p-2'>
+                <li><Link to="/profile">Your Account</Link></li>
+                <li><Link to="/citi">Food Category</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
+                <li><Link to="/memories">Memories</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h5 className="text-lg font-semibold mb-4 text-center">Contact</h5>
+              <ul className='text-center p-2'>
+                <li>Ahmedabad, Gujarat</li>
+                <li>heystreet121@gmail.com</li>
+                <li>+91 9727571976</li>
+              </ul>
+            </div>
           </div>
-          <hr className="clearfix w-100 d-md-none" />
-          <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h6 className="text-uppercase font-weight-bold" style={{ color: 'black' }}>Products</h6>
-            <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: '70px' }} />
-            <p>
-              <a href="/">Home</a>
-            </p>
-            <p>
-              <a href="/about">About</a>
-            </p>
-            <p>
-              <a href="/menu">Menu</a>
-            </p>
-            <p>
-              <a href="/blog">Blog</a>
-            </p>
-            <p>
-              <a href="/gallery">Gallery</a>
-            </p>
+          <hr className="my-8 border-gray-600" />
+          <div className="flex justify-center items-center mb-8">
+            <h5 className="text-lg mr-4 text-center">Register for free</h5>
+            <Link to="/sign-up" className="bg-red-700 border-white text-white p-2 rounded-md  ">Sign up!</Link>
           </div>
-          <hr className="clearfix w-100 d-md-none" />
-          <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-            <h6 className="text-uppercase font-weight-bold" style={{ color: 'black' }}>Useful links</h6>
-            <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: '70px' }} />
-            <p>
-              <a href="/profile">Your Account</a>
-            </p>
-            <p>
-              <a href="/citi">food catagory</a>
-            </p>
-            <p>
-              <a href="/contact">Contact</a>
-            </p>
-            <p>
-              <a href="/memories">Notes</a>
-            </p>
+          <div className="flex justify-center mb-8">
+            <ul className="flex space-x-4 p-2">
+              <li><a href="/" title="Facebook"><FontAwesomeIcon icon={faFacebookF} className="text-blue-500" /></a></li>
+              <li><a href="/" title="Twitter"><FontAwesomeIcon icon={faTwitter} className="text-blue-400" /></a></li>
+              <li><a href="https://www.instagram.com/kartik_vaghani_027" title="Instagram"><FontAwesomeIcon icon={faInstagram} className="text-purple-600" /></a></li>
+              <li><a href="/" title="Google"><FontAwesomeIcon icon={faGoogle} className="text-blue-500" /></a></li>
+              <li><a href="/" title="LinkedIn"><FontAwesomeIcon icon={faLinkedinIn} className="text-blue-500" /></a></li>
+              <li><a href="/" title="GitHub"><FontAwesomeIcon icon={faGithub} className="text-white" /></a></li>
+            </ul>
           </div>
-          <hr className="clearfix w-100 d-md-none" />
-          <div className="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-            <h6 className="text-uppercase font-weight-bold" style={{ color: 'black' }}>Contact</h6>
-            <hr className="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style={{ width: '60px' }} />
-            <p  style={{ color: 'black' }}> Ahmedabad, Gujarat</p>
-            <p  style={{ color: 'black' }}>heystreet121@gmail.com</p>
-            <p  style={{ color: 'black' }}> + 91 80254 55xxx</p>
-          </div>
+          <hr className="my-8 border-gray-600" />
+          <ul className="flex justify-center space-x-4 text-gray-700">
+            <li><Link to="/">© 2024 <span className="text-white">HeyStreet</span>. All Rights Reserved</Link></li>
+            <li><Link to="/about">About Us</Link></li>
+            <li><Link to="/">Terms Of Use</Link></li>
+            <li><Link to="/">Privacy Policy</Link></li>
+          </ul>
         </div>
-      </div>
-      <hr />
-      <ul className="list-unstyled list-inline text-center py-2" style={{ backgroundColor: 'white' }}>
-        <li className="list-inline-item">
-          <h5 className="mb-1">Register for free</h5>
-        </li>
-        <li className="list-inline-item">
-          <a href="/sign-up" className="btn btn-outline-danger btn-rounded">Sign up!</a>
-        </li>
-      </ul>
-      <div className="hover-effect1">
-    <ul className="list-unstyled list-inline text-center ">
-      <li className="list-inline-item">
-        <a href="/" title="Facebook" style={{ color: 'blue' }}><FontAwesomeIcon icon={faFacebookF} /></a>
-      </li>
-      <li className="list-inline-item">
-        <a href="/" title="Twitter" style={{ color: '#1DA1F2' }}> <FontAwesomeIcon icon={faTwitter} /></a>
-      </li>
-      <li className="list-inline-item">
-        <a href="https://www.instagram.com/kartik_vaghani_027" title="Instagram"  style={{ color: '#833AB4' }}><FontAwesomeIcon icon={faInstagram} /></a>
-      </li>
-      <li className="list-inline-item">
-        <a href="/" title="Google" style={{ color: '4285F4' }}><FontAwesomeIcon icon={faGoogle} /></a>
-      </li>
-      <li className="list-inline-item">
-        <a href="/" title="linkdin" style={{ color: 'blue' }} ><FontAwesomeIcon icon={faLinkedinIn} /></a>
-      </li>
-      <li className="list-inline-item">
-        <a href="/" title="github" style={{ color: 'black' }}><FontAwesomeIcon icon={faGithub} /></a>
-      </li>
-      
-    </ul>
-</div>
+      </footer>
+    );
+  };
 
-      <div><ul className="line">
-  <li><Link to="/">© 2024 <span>HeyStreet</span>. All Rights Reserved</Link></li>
-  <li><Link to="/about">About Us</Link></li>
-  <li><Link to="/">Terms Of Use</Link></li>
-  <li><Link to="/">Privacy Policy</Link></li>
-</ul></div>
-
-    </footer>
-  );
-};
-
-export default Footer;
+  export default Footer;
