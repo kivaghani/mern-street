@@ -22,8 +22,8 @@ const Section7 = () => {
     <>
       <Header />
       <section id='contact'>
-        <h6>If you want to put details of your street food on this website then submit your food details then</h6>
-        <h2 className='text-center text-white font-bold'>Contact Me</h2>
+        <h6 className='up'>If you want to put details of your street food on this website then submit your food details then</h6>
+        <h2 className='text-center text-white font-bold mt-4 mb-8'>Contact Me</h2>
 
         <div className="container contact__container">
           <div className="contact__options">

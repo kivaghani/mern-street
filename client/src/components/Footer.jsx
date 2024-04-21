@@ -4,6 +4,8 @@
   import { faFacebookF, faTwitter, faGoogle, faInstagram, faLinkedinIn, faGithub } from '@fortawesome/free-brands-svg-icons'; 
 
   const Footer = () => {
+
+    
     return (
       <footer className="bg-gray-900 text-white py-16">
         <div className="container mx-auto px-4">
@@ -43,7 +45,7 @@
           <hr className="my-8 border-gray-600" />
           <div className="flex justify-center items-center mb-8">
             <h5 className="text-lg mr-4 text-center">Register for free</h5>
-            <Link to="/sign-up" className="bg-red-700 border-white text-white p-2 rounded-md  ">Sign up!</Link>
+            <Link to="/sign-up" className="bg-red-700 border-white text-black font-bold p-2 rounded-md hover:bg-yellow-400">Sign up!</Link>
           </div>
           <div className="flex justify-center mb-8">
             <ul className="flex space-x-4 p-2">

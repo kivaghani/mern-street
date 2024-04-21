@@ -274,6 +274,11 @@
   }
   
   /* Home Contact 8.0 */
+
+
+  .up{
+    margin-top: 100px;
+  }
   .contact_section {
     background: url("../images/hero-1.jpg") no-repeat center center;
     background-size: cover;
