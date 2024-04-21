@@ -45,7 +45,7 @@ const Notes = () => {
             <input type='text' id='text' placeholder='Name' name='text' value={formData.text} onChange={handleChange} required/>
           </div>
           <div className='input-box'>
-            <label htmlFor='date'></label>
+            <label htmlFor='date'>Date:</label>
             <input type='date' id='date' placeholder='Date' name='date' value={formData.date} onChange={handleChange} required />
           </div>
           <div className='input-box'>
