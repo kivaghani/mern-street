@@ -10,7 +10,6 @@
   background-image: url('../images/about-1.jpg');
   background-size: cover;
   background-position: center;
-  /* min-height: 100vh; */
   display: flex;
   justify-content: center; 
   align-items: center; 
@@ -18,13 +17,14 @@
 }
 
 .gallery h1 {
+  margin-top: 20%;
   color: white;
   font-size: 28px;
   margin-bottom: 20px;
-  
 }
 
 .image-grid {
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -32,7 +32,7 @@
 }
 
 .image-card {
-  flex-basis: calc(23%); /* Set width for 5 cards in a row with 20px gap */
+  flex-basis: calc(23% - 20px); /* Set width for 5 cards in a row with 20px gap */
   position: relative;
   height: 200px; 
   padding: 10px;
@@ -76,4 +76,28 @@
 
 .note-info p strong {
   font-weight: bold;
+}
+
+/* Media Query for Mobile View */
+
+
+@media(max-width:1024px) {
+  .gallery{
+    margin-top: 10%;
+  
+  }
+  
+}
+@media (max-width: 768px) {
+  .gallery {
+    margin-top: 30%; /* Add top margin for mobile view */
+  }
+
+  .image-grid {
+    justify-content: center; /* Center cards for smaller screens */
+  }
+
+  .image-card {
+    flex-basis: calc(75%); /* Set width for 2 cards in a row with 20px gap */
+  }
 }
