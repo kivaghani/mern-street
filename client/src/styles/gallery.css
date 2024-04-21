@@ -3,23 +3,25 @@
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
+  margin-top: 5%;
 }
+
 .fi {
   background-image: url('../images/about-1.jpg');
   background-size: cover;
   background-position: center;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   justify-content: center; 
   align-items: center; 
-  padding:10px;
+  padding: 10px;
 }
-
 
 .gallery h1 {
   color: white;
   font-size: 28px;
   margin-bottom: 20px;
+  
 }
 
 .image-grid {
@@ -30,22 +32,21 @@
 }
 
 .image-card {
+  flex-basis: calc(23%); /* Set width for 5 cards in a row with 20px gap */
   position: relative;
-  width: 200px; /* Set a fixed width */
   height: 200px; 
-  padding: 20px;
+  padding: 10px;
   margin-bottom: 20px;
   overflow: hidden;
   border: 1px solid #eaeaea;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
 }
 
 .image-card img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ensure the image covers the container */
+  object-fit: cover;
   border-radius: 8px; 
 }
 
