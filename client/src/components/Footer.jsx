@@ -15,7 +15,7 @@
               <p>Heystreet is a street food platform designed to provide comprehensive information about both vegetarian and non-vegetarian street food options.</p>
             </div>
             <div>
-              <h5 className="text-lg font-semibold mb-4 text-center">Products</h5>
+              <h5 className="text-lg font-semibold mb-4 text-center">Features</h5>
               <ul className='text-center p-2'>
                 <li><Link to="/">Home</Link></li>
                 <li><Link to="/about">About</Link></li>
@@ -27,8 +27,7 @@
             <div>
               <h5 className="text-lg font-semibold mb-4 text-center ">Useful links</h5>
               <ul className='text-center p-2'>
-                <li><Link to="/profile">Your Account</Link></li>
-                <li><Link to="/citi">Food Category</Link></li>
+                <li><Link to="/profile">Profile</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
                 <li><Link to="/memories">Memories</Link></li>
               </ul>
