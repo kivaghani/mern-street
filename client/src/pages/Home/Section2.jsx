@@ -28,6 +28,7 @@ function Section2() {
   return (
     <>
     <Header/>
+    
     <section className='about_section'>
         <Container>
             <Row>

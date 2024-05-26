@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import VideoSource from "../../images/production_id_4236790 (1080p).mp4"; // Import your video file
@@ -7,10 +7,11 @@ import VideoSource from "../../images/production_id_4236790 (1080p).mp4"; // Imp
 const Section1 = () => {
   const { currentUser } = useSelector((state) => state.user);
   const handleButtonClick = () => {
-    alert('To unlock this feature, please sign in.');
+    alert("To unlock this feature, please sign in.");
   };
   return (
     <>
+     
       <section className="hero_section">
         <Container>
           <Row>
@@ -19,30 +20,38 @@ const Section1 = () => {
                 <video autoPlay muted loop className="video-bg">
                   <source src={VideoSource} type="video/mp4" />
                 </video>
-                <div className="position-relative">
-                </div>
+                <div className="position-relative"></div>
               </div>
             </Col>
             <Col lg={5}>
               <div className="hero_text text-center">
                 <h1 className="text-white">Hey street</h1>
                 <h2 className="text-white">Welcome to the street-food club</h2>
+                
                 <p className="text-white pt-2 pb-4">Select the food category</p>
                 {currentUser ? (
-                  <Link to='/citi' className='selecta'>
+                  <Link to="/citi" className="selecta">
                     Veg
                   </Link>
                 ) : (
-                  <Link to="/sign-in" className="selecta" onClick={handleButtonClick}>
+                  <Link
+                    to="/sign-in"
+                    className="selecta"
+                    onClick={handleButtonClick}
+                  >
                     Veg
                   </Link>
                 )}
                 {currentUser ? (
-                  <Link to='/nonveg' className='selecta'>
+                  <Link to="/nonveg" className="selecta">
                     Non-Veg
                   </Link>
                 ) : (
-                  <Link to="/sign-in" className="selecta" onClick={handleButtonClick}>
+                  <Link
+                    to="/sign-in"
+                    className="selecta"
+                    onClick={handleButtonClick}
+                  >
                     Non-Veg
                   </Link>
                 )}
@@ -51,6 +60,12 @@ const Section1 = () => {
           </Row>
         </Container>
       </section>
+      <div class="ctms">
+  <div class="bar">
+    <div class="ball"></div>
+  </div>
+</div>
+
     </>
   );
 };

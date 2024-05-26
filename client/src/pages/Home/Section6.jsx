@@ -73,8 +73,19 @@ function Section6() {
           </Carousel>
         </Row>
       </Container>
+      <div className="ctms">
+      <div class="🤚">
+	<div class="👉"></div>
+	<div class="👉"></div>
+	<div class="👉"></div>
+	<div class="👉"></div>
+	<div class="🌴"></div>		
+	<div class="👍"></div>
+</div>
+</div>
     </section>
     {/* <Footer/> */}
+    
     </>
   );
 }
