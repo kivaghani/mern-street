@@ -5,6 +5,8 @@ import { signInStart, signInSuccess, signInFailure } from '../redux/user/userSli
 import OAuth from '../components/OAuth';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function SignIn() {
   const [formData, setFormData] = useState({});
@@ -31,21 +33,24 @@ export default function SignIn() {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      console.log(data);
       if (data.success === false) {
         dispatch(signInFailure(data.message));
+        toast.error(data.message, { autoClose: 3000 });
         return;
       }
       dispatch(signInSuccess(data));
       navigate('/');
+      toast.success('Signed in successfully!', { autoClose: 3000 });
     } catch (error) {
       dispatch(signInFailure(error.message));
+      toast.error(error.message, { autoClose: 3000 });
     }
   };
 
   return (
     <>
       <Header />
+      <ToastContainer />
       <div className="back2">
           <div className="p-5 max-w-lg mx-auto">
             <h1 className="text-3xl text-center font-semibold my-7 text-white mt-5">Sign In</h1>

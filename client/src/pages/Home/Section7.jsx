@@ -2,25 +2,29 @@ import React, { useState, useRef } from 'react';
 import { AiOutlineMail, AiOutlineWhatsApp, AiOutlineInstagram } from 'react-icons/ai';
 import emailjs from 'emailjs-com';
 import Header from '../../components/Header';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Section7 = () => {
   const form = useRef();
-  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs.sendForm('service_50su3ue', 'template_bj56nfc', form.current, 'wwjAQTxRZh1W8FKQ7')
       .then(() => {
-        setShowSuccessMessage(true);
-        setTimeout(() => setShowSuccessMessage(false), 3000); // Hide message after 3 seconds
+        toast.success('Message sent successfully!', { autoClose: 3000 });
       })
-      .catch((error) => console.error('Email error:', error));
+      .catch((error) => {
+        console.error('Email error:', error);
+        toast.error('Failed to send message. Please try again later.', { autoClose: 3000 });
+      });
   };
 
   return (
     <>
       <Header />
+      <ToastContainer />
       <section id='contact'>
         <h6 className='up'>If you want to put details of your street food on this website then submit your food details then</h6>
         <h2 className='text-center text-white font-bold mt-4 mb-8'>Contact Me</h2>
@@ -55,7 +59,6 @@ const Section7 = () => {
               </div>
               <button type='submit' className='bt'>Send a Message</button>
             </form>
-            {showSuccessMessage && <p className="success-message" >Message sent successfully!</p>}
           </div>
         </div>
       </section>
