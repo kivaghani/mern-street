@@ -50,8 +50,57 @@ function AmdManekBalaOrder() {
     setTotalCost(total.toFixed(2));
   };
 
+  const loadScript = (src) => {
+    return new Promise((resolve) => {
+      const script = document.createElement("script");
+      script.src = src;
+
+      script.onload = () => {
+        resolve(true);
+      };
+
+      script.onerror = () => {
+        resolve(false);
+      };
+
+      document.body.appendChild(script);
+    });
+  };
+
+  const displayRazorpay = async (amount) => {
+    const res = await loadScript(
+      "https://checkout.razorpay.com/v1/checkout.js"
+    );
+
+    if (!res) {
+      alert("You are offline... Failed to load Razorpay SDK");
+      return;
+    }
+
+    const options = {
+      key: "rzp_test_aEraDkZjrCfkbF",
+      currency: "INR",
+      amount: amount * 100,
+      name: "AmdManekBalaOrder",
+      description: "Thanks for your order",
+      image:
+        "https://your-logo-url.com/logo.png", 
+
+      handler: function (response) {
+        alert(response.razorpay_payment_id);
+        alert("Payment Successfully");
+      },
+      prefill: {
+        name: "Customer Name",
+      },
+    };
+
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+  };
+
   const handleSubmitOrder = () => {
-    
+    displayRazorpay(totalCost);
   };
 
   return (
